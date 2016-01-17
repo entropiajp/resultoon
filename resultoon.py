@@ -10,7 +10,7 @@ import requests
 import config
 
 
-rightup_template = cv2.imread("./templates/result_upright_binary.bmp", cv2.CV_LOAD_IMAGE_GRAYSCALE)
+rightup_template = cv2.imread("./templates/result_upright_binary.bmp", cv2.IMREAD_GRAYSCALE)
 
 numbers = []
 for x in xrange(10):
@@ -28,8 +28,8 @@ stage_tpls = [cv2.imread('./templates/stages/' + name + '.png', cv2.IMREAD_GRAYS
               for name in stage_names]
 
 cap = cv2.VideoCapture(config.CAPTURE_BOARD_DEVICE_ID)
-cap.set(cv2.cv.CV_CAP_PROP_FRAME_WIDTH, 1280)
-cap.set(cv2.cv.CV_CAP_PROP_FRAME_HEIGHT, 720)
+cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1280)
+cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
 display_info = {}  # 画面に表示したい情報
 
@@ -217,7 +217,7 @@ def draw_info_on_display(frame):
     y = 1
     for item in display_info.items():
         cv2.putText(frame, item[0] + ": " + item[1], (10, y*50),
-                    cv2.FONT_HERSHEY_SIMPLEX, 2, 255, 2, cv2.CV_AA)
+                    cv2.FONT_HERSHEY_SIMPLEX, 2, 255, 2, cv2.LINE_AA)
         y += 1
     return frame
 
