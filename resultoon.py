@@ -23,7 +23,8 @@ rule_tpls = [cv2.imread('./templates/rules/area.png', cv2.IMREAD_GRAYSCALE),
              cv2.imread('./templates/rules/hoko.png', cv2.IMREAD_GRAYSCALE)]
 
 stage_names = ['dekaline', 'sionome', 'bbus', 'hakofugu', 'alowana',
-               'hokke', 'mozuku', 'negitoro', 'tachiuo', 'mongara', 'hirame']
+               'hokke', 'mozuku', 'negitoro', 'tachiuo', 'mongara',
+               'hirame', 'masaba', 'kinmedai', 'mahimahi', 'shotturu']
 stage_tpls = [cv2.imread('./templates/stages/' + name + '.png', cv2.IMREAD_GRAYSCALE)
               for name in stage_names]
 
